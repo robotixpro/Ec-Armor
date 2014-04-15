@@ -1,0 +1,186 @@
+package me.starmech.ECArmor;
+
+import java.util.Arrays;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Color;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin{
+	
+	public void onEnable() {
+		getLogger().info("ExtraCraft RPG Armor Enabled");
+		getLogger().info("Loading Recipes For:");
+		getLogger().info("Leather Armor - 4 Recipes");
+		getLogger().info("SpiderSilk Armor - 4 Recipes");
+		getLogger().info("Stealeaf Armor - 1 Recipe");
+		getLogger().info("9 Recipes Loaded");
+		getLogger().info("Development Version 1.0.3Dev");
+		LeatherHelmet();
+		LeatherJacket();
+		LeatherLeggings();
+		LeatherBoots();
+		SpiderSilkHelmet();
+		SpiderSilkJacket();
+		SpiderSilkLeggings();
+		SpiderSilkBoots();
+		StealeafHelmet();
+		StealeafJacket();
+		StealeafLeggings();
+		StealeafBoots();
+	}
+	
+	//Leather Armor
+	private void LeatherHelmet() {
+        ItemStack LeatherHelmet = new ItemStack(Material.LEATHER_HELMET, 1);
+        LeatherArmorMeta LeatherHelmetMeta = (LeatherArmorMeta) LeatherHelmet.getItemMeta();
+        LeatherHelmetMeta.setDisplayName(ChatColor.WHITE + "Leather Helmet");
+        LeatherHelmetMeta.setLore(Arrays.asList("Just an old leather helmet..."));
+        LeatherHelmet.setItemMeta(LeatherHelmetMeta);
+        ShapedRecipe leatherhelm = new ShapedRecipe(LeatherHelmet);
+        leatherhelm.shape(new String[]{"LLL","L L"}).setIngredient('L', Material.LEATHER);
+        Bukkit.getServer().addRecipe(leatherhelm);
+	}
+	private void LeatherJacket() {
+        ItemStack LeatherJacket = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+        LeatherArmorMeta LeatherJacketMeta = (LeatherArmorMeta) LeatherJacket.getItemMeta();
+        LeatherJacketMeta.setDisplayName(ChatColor.WHITE + "Leather Jacket");
+        LeatherJacketMeta.setLore(Arrays.asList("Just an old leather jacket..."));
+        LeatherJacket.setItemMeta(LeatherJacketMeta);
+        ShapedRecipe leatherjacket = new ShapedRecipe(LeatherJacket);
+        leatherjacket.shape(new String[]{"L L","LLL","LLL"}).setIngredient('L', Material.LEATHER);
+        Bukkit.getServer().addRecipe(leatherjacket);
+	}
+	private void LeatherLeggings() {
+        ItemStack LeatherLeggings = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+        LeatherArmorMeta LeatherLeggingsMeta = (LeatherArmorMeta) LeatherLeggings.getItemMeta();
+        LeatherLeggingsMeta.setDisplayName(ChatColor.WHITE + "Leather Leggings");
+        LeatherLeggingsMeta.setLore(Arrays.asList("Just some old leather leggings..."));
+        LeatherLeggings.setItemMeta(LeatherLeggingsMeta);
+        ShapedRecipe leatherleggings = new ShapedRecipe(LeatherLeggings);
+        leatherleggings.shape(new String[]{"LLL","L L","L L"}).setIngredient('L', Material.LEATHER);
+        Bukkit.getServer().addRecipe(leatherleggings);
+	}
+	private void LeatherBoots() {
+        ItemStack LeatherBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
+        LeatherArmorMeta LeatherBootsMeta = (LeatherArmorMeta) LeatherBoots.getItemMeta();
+        LeatherBootsMeta.setDisplayName(ChatColor.WHITE + "Leather Helmet");
+        LeatherBootsMeta.setLore(Arrays.asList("Just an old leather helmet..."));
+        LeatherBoots.setItemMeta(LeatherBootsMeta);
+        ShapedRecipe leatherboots = new ShapedRecipe(LeatherBoots);
+        leatherboots.shape("@@@","@ @");
+        leatherboots.setIngredient('@', Material.LEATHER);
+        Bukkit.getServer().addRecipe(leatherboots);	
+	}
+	
+//SpiderSilk Armor
+	private void SpiderSilkHelmet() {
+        ItemStack SpiderSilkHelmet = new ItemStack(Material.LEATHER_HELMET, 1);
+        LeatherArmorMeta SpiderSilkHelmetMeta = (LeatherArmorMeta) SpiderSilkHelmet.getItemMeta();
+        SpiderSilkHelmetMeta.setDisplayName(ChatColor.WHITE + "SpiderSilk Helmet");
+        SpiderSilkHelmetMeta.setLore(Arrays.asList("This helmet was made from", "many spiders.",ChatColor.BLUE + "Tier 1"));
+        SpiderSilkHelmetMeta.setColor(Color.WHITE);
+        SpiderSilkHelmetMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+        SpiderSilkHelmet.setItemMeta(SpiderSilkHelmetMeta);
+        ShapedRecipe spidersilkhelm = new ShapedRecipe(SpiderSilkHelmet);
+        spidersilkhelm.shape(new String[]{"SSS","S S"}).setIngredient('S', Material.STRING);
+        Bukkit.getServer().addRecipe(spidersilkhelm);
+	}
+	private void SpiderSilkJacket() {
+        ItemStack SpiderSilkJacket = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+        LeatherArmorMeta SpiderSilkJacketMeta = (LeatherArmorMeta) SpiderSilkJacket.getItemMeta();
+        SpiderSilkJacketMeta.setDisplayName(ChatColor.WHITE + "SpiderSilk Jacket");
+        SpiderSilkJacketMeta.setLore(Arrays.asList("This Jacket was made from", "many spiders.",ChatColor.BLUE + "Tier 1"));
+        SpiderSilkJacketMeta.setColor(Color.WHITE);
+        SpiderSilkJacketMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+        SpiderSilkJacket.setItemMeta(SpiderSilkJacketMeta);
+        ShapedRecipe spidersilkjacket = new ShapedRecipe(SpiderSilkJacket);
+        spidersilkjacket.shape(new String []{"S S","SSS","SSS"}).setIngredient('S', Material.STRING);
+        Bukkit.getServer().addRecipe(spidersilkjacket);
+	}
+	private void SpiderSilkLeggings() {
+	    ItemStack SpiderSilkLeggings = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+	    LeatherArmorMeta SpiderSilkLeggingsMeta = (LeatherArmorMeta) SpiderSilkLeggings.getItemMeta();
+	    SpiderSilkLeggingsMeta.setDisplayName(ChatColor.WHITE + "SpiderSilk Leggings");
+	    SpiderSilkLeggingsMeta.setLore(Arrays.asList("These Leggings were made from", "many spiders.",ChatColor.BLUE + "Tier 1"));
+	    SpiderSilkLeggingsMeta.setColor(Color.WHITE);
+	    SpiderSilkLeggingsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+	    SpiderSilkLeggings.setItemMeta(SpiderSilkLeggingsMeta);
+	    ShapedRecipe spidersilkleggings = new ShapedRecipe(SpiderSilkLeggings);
+	    spidersilkleggings.shape(new String[]{"SSS","S S","S S"}).setIngredient('S', Material.STRING);
+	    Bukkit.getServer().addRecipe(spidersilkleggings);
+	}
+	private void SpiderSilkBoots() {
+	    ItemStack SpiderSilkBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
+	    LeatherArmorMeta SpiderSilkBootsMeta = (LeatherArmorMeta) SpiderSilkBoots.getItemMeta();
+	    SpiderSilkBootsMeta.setDisplayName(ChatColor.WHITE + "SpiderSilk Boots");
+	    SpiderSilkBootsMeta.setLore(Arrays.asList("These Boots were made from", "many spiders.",ChatColor.BLUE + "Tier 1"));
+	    SpiderSilkBootsMeta.setColor(Color.WHITE);
+	    SpiderSilkBootsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+	    SpiderSilkBoots.setItemMeta(SpiderSilkBootsMeta);
+	    ShapedRecipe spidersilkboots = new ShapedRecipe(SpiderSilkBoots);
+	    spidersilkboots.shape(new String[]{"S S","S S"}).setIngredient('S', Material.STRING);
+	    Bukkit.getServer().addRecipe(spidersilkboots);
+    }
+	
+	//Stealeaf Armor
+	private void StealeafHelmet() {
+	    ItemStack StealeafHelmet = new ItemStack(Material.LEATHER_HELMET, 1);
+	    LeatherArmorMeta StealeafHelmetMeta = (LeatherArmorMeta) StealeafHelmet.getItemMeta();
+	    StealeafHelmetMeta.setDisplayName(ChatColor.WHITE + "Stealeaf Helmet");
+	    StealeafHelmetMeta.setLore(Arrays.asList("Who knew leaves were so strong?",ChatColor.BLUE + "Tier 1.2"));
+	    StealeafHelmetMeta.setColor(Color.OLIVE);
+	    StealeafHelmetMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+	    StealeafHelmet.setItemMeta(StealeafHelmetMeta);
+	    ShapedRecipe stealeafhelm = new ShapedRecipe(StealeafHelmet);
+	    stealeafhelm.shape(new String[]{"LLL","L L"}).setIngredient('L', Material.LEAVES);
+	    Bukkit.getServer().addRecipe(stealeafhelm);
+	}
+	private void StealeafJacket() {
+	    ItemStack StealeafJacket = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+	    LeatherArmorMeta StealeafJacketMeta = (LeatherArmorMeta) StealeafJacket.getItemMeta();
+	    StealeafJacketMeta.setDisplayName(ChatColor.WHITE + "Stealeaf Jacket");
+	    StealeafJacketMeta.setLore(Arrays.asList("Who knew leaves were so strong?",ChatColor.BLUE + "Tier 1.2"));
+	    StealeafJacketMeta.setColor(Color.OLIVE);
+	    StealeafJacketMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+	    StealeafJacket.setItemMeta(StealeafJacketMeta);
+	    ShapedRecipe stealeafjacket = new ShapedRecipe(StealeafJacket);
+	    stealeafjacket.shape(new String[]{"L L","LLL","LLL"}).setIngredient('L', Material.LEAVES);
+	    Bukkit.getServer().addRecipe(stealeafjacket);
+    }
+	private void StealeafLeggings() {
+	    ItemStack StealeafLeggings = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+	    LeatherArmorMeta StealeafLeggingsMeta = (LeatherArmorMeta) StealeafLeggings.getItemMeta();
+	    StealeafLeggingsMeta.setDisplayName(ChatColor.WHITE + "Stealeaf Jacket");
+	    StealeafLeggingsMeta.setLore(Arrays.asList("Who knew leaves were so strong?",ChatColor.BLUE + "Tier 1.2"));
+	    StealeafLeggingsMeta.setColor(Color.OLIVE);
+	    StealeafLeggingsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+	    StealeafLeggings.setItemMeta(StealeafLeggingsMeta);
+	    ShapedRecipe stealeafjacket = new ShapedRecipe(StealeafLeggings);
+	    stealeafjacket.shape(new String[]{"LLL","L L","L L"}).setIngredient('L', Material.LEAVES);
+	    Bukkit.getServer().addRecipe(stealeafjacket);
+    }
+	private void StealeafBoots() {
+	    ItemStack StealeafBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
+	    LeatherArmorMeta StealeafBootsMeta = (LeatherArmorMeta) StealeafBoots.getItemMeta();
+	    StealeafBootsMeta.setDisplayName(ChatColor.WHITE + "Stealeaf Jacket");
+	    StealeafBootsMeta.setLore(Arrays.asList("Who knew leaves were so strong?",ChatColor.BLUE + "Tier 1.2"));
+	    StealeafBootsMeta.setColor(Color.OLIVE);
+	    StealeafBootsMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 2, true);
+	    StealeafBoots.setItemMeta(StealeafBootsMeta);
+	    ShapedRecipe stealeafjacket = new ShapedRecipe(StealeafBoots);
+	    stealeafjacket.shape(new String[]{"L L","L L"}).setIngredient('L', Material.LEAVES);
+	    Bukkit.getServer().addRecipe(stealeafjacket);
+    }
+	public void onDisable(){
+		getLogger().info("Clearing Recipes...");
+		getLogger().info("ExtraCraft RPG Armor Disabled!");
+		Bukkit.getServer().clearRecipes();
+	}
+}
